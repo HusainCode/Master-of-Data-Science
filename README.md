@@ -1,8 +1,6 @@
-# 🎓 Master of Science in Data Science at [Tennessee State University](https://www.tnstate.edu/index.aspx)
-> *(Ctrl+Click to open in a new tab)*  
+# 🎓 Master of Science in Data Science at Tennessee State University
 
-
-Welcome to my **Master of Data Science** repository! This space is dedicated to storing my coursework, projects, and homework assignments from my graduate studies at **Tennessee State University**.  
+Welcome to my **Master of Science in Data Science** repository! This space is dedicated to storing my coursework, projects, and homework assignments from my graduate studies at **Tennessee State University**.  
 
 ---
 
