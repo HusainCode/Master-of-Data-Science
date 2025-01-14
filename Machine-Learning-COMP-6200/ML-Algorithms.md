@@ -42,5 +42,3 @@ This table provides a summary of 30 commonly used machine learning algorithms, c
 - **Supervised Learning:** For labeled data tasks.  
 - **Unsupervised Learning:** For clustering and dimensionality reduction.  
 - **Reinforcement Learning:** For decision-making in dynamic environments.  
-
-Feel free to contribute to this list by submitting a pull request!
