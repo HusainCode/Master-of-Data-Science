@@ -1,6 +1,6 @@
 # 🎓 Master of Science in Data Science 
-# 🎓 [Tennessee State University](https://www.tnstate.edu/index.aspx)
-> *(Ctrl+Click to open in a new tab)*  
+#     [Tennessee State University](https://www.tnstate.edu/index.aspx)
+      *(Ctrl+Click to open in a new tab)*  
 
  
 
