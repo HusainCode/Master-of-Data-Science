@@ -1,6 +1,7 @@
 # Python Programming Exercises
 
 ## 1. Basic Conversion
+## <span style="color:green; font-size:1.5em;">✔</span> 1. Basic Conversion
 1. [x] Write a Python program that takes an input as length in centimeters and converts it to meters and kilometers.
 
 ## 2. Mathematical Operations
