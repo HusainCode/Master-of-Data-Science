@@ -1,7 +1,7 @@
 # List of Exercises in Chapter 1.13:
 
 ## <span style="color:green; font-size:1.5em;">✔</span> 1. Basic Conversion
-1. Write a Python program that takes an input as length in centimeters and converts it to meters and kilometers.
+1. [Write a Python program that takes an input as length in centimeters and converts it to meters and kilometers.](https://github.com/HusainCode/Master-of-Data-Science/blob/main/Machine-Learning-COMP-6200/Hands-on-machine-learning-and-Data-Sciences-BOOK/Exercises/1.13-Exercises/exercise-1.py)
 
 ## 2. Mathematical Operations
 2. Write a Python program that takes two numbers from the user and finds their power, that is, \( x^y \).
