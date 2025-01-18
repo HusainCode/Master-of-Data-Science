@@ -11,16 +11,16 @@ kilometers = centimeters / 100000
 """
 
 # converts centimeters to meters
-def converts_to_meter(centimeter):
+def convert_to_meter(centimeter):
    meters = round(centimeter / 100, 2)
    return meters 
   
 # converts kilometers to meters
-def converts_to_kilometer(centimeter):
+def convert_to_kilometer(centimeter):
   kilometer = round(centimeter / 100000, 2)
   return kilometer 
 
 centimeters = int(input(("Please enter length in centimeters:")))
 
-print(centimeters, " centimeters are equivalent to ", converts_to_meter(centimeters), " meters")
-print(centimeters, " centimeters are equivalent to ", converts_to_kilometer(centimeters), " kilometers")
+print(centimeters, " centimeters are equivalent to ", convert_to_meter(centimeters), " meters")
+print(centimeters, " centimeters are equivalent to ", convert_to_kilometer(centimeters), " kilometers")
