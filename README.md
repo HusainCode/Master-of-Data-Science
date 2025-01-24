@@ -8,10 +8,9 @@ Welcome to my **Master of Science in Data Science** repository! This space is de
 This repository is organized by courses and topics covered during the program:
 
 - 📦 **Machine-Learning-COMP-6200:**  
-   - Linear Regression (`Linear_Regression.md`)     
+       
 
 - 📦 **Assignments & Homework:**  
-   - Course-specific problem sets and solutions.  
 
 ---
 
@@ -29,4 +28,4 @@ This repository is organized by courses and topics covered during the program:
 
 ---
 
-⭐️ *Feel free to explore the repository and reach out if you're interested in collaboration or feedback on my work!*  
+⭐️ *Feel free to explore the repository and reach out for feedback on my work!*  
