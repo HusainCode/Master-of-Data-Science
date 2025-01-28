@@ -51,8 +51,6 @@ x_train, y_train, x_test, y_test = train_test_split(x_features,y_target, test_si
 
 # END OF PART 1
 
-
-
 # Part 2: Statistics
 # Slice the full dataset by fish species
 # For each species, calculate and print the mean, standard deviation, and interquartile range (IQR) for each numerical feature
@@ -61,37 +59,18 @@ x_train, y_train, x_test, y_test = train_test_split(x_features,y_target, test_si
 
 import matplotlib.pyplot as plt
 import seaborn as sns
+from tabulate import tabulate
 
 # slice the data using groupby() from pandas 
 sliced_species = data.groupby('Species')
 
-bream = sliced_species.get_group('Bream')
-# pike = sliced_species.get_group("Pike")
-# perch = sliced_species.get_group("Perch")
-# roach = sliced_species.get_group("Roach")
-# whitefish = sliced_species.get_group("Whitefish")
-# parkki = sliced_species.get_group("Parkki")
-# Perch = sliced_species.get_group("Perch")
-# Pike = sliced_species.get_group("Pike")
-# smelt = sliced_species.get_group("Smelt")
-
 # Calculate mean & standard deviation for ALL species
-species_stats = data.groupby('Species').agg(['mean', 'std']).round(2)
-print(species_stats)  # Print overall stats
+mean_stats = data.groupby('Species').std().round(2) # .agg() function applies one or more aggregation functions, such as mean, std
+print(tabulate(mean_stats, headers='keys', tablefmt='fancy_grid')) # Print mean stats
 
-# Calculate mean and standard deviation for Bream only
-bream_mean = bream.mean(numeric_only=True).round(2).to_frame().T  # Convert to DataFrame
-bream_standard_deviation = bream.std(numeric_only=True).round(2).to_frame().T  # Convert to DataFrame
+std_stats = data.groupby('Species').mean().round(2) # .agg() function applies one or more aggregation functions, such as mean, std
+print(tabulate(std_stats, headers='keys', tablefmt='fancy_grid')) # Print std stats
 
-# Add a column for 'Species
-bream_mean['Species'] = 'Bream'
-bream_standard_deviation['Species'] = 'Bream'
-
-# Plot the Mean and Standard Deviation for Bream
-plt.figure(figsize=(12,6))
-sns.barplot(x='Species', y='Weight', data=bream_mean, yerr=bream_standard_deviation['Weight'])
-plt.xticks(rotation=45)
-plt.ylabel("Mean Weight")
-plt.title("Mean and Standard Deviation of Bream Weight")
-plt.show()
-
+print("\ninterquartile range (IQR) for each numerical feature")
+interquartile_stats = data.groupby('Species').agg(lambda x: np.percentile(x, 75) - np.percentile(x, 25))
+print(tabulate(interquartile_stats, headers='keys', tablefmt='fancy_grid')) # Print  interquartile stats
