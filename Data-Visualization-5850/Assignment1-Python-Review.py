@@ -83,7 +83,7 @@ print(species_stats)  # Print overall stats
 bream_mean = bream.mean(numeric_only=True).round(2).to_frame().T  # Convert to DataFrame
 bream_standard_deviation = bream.std(numeric_only=True).round(2).to_frame().T  # Convert to DataFrame
 
-# Add a column for 'Species' (since we filtered only Bream before)
+# Add a column for 'Species
 bream_mean['Species'] = 'Bream'
 bream_standard_deviation['Species'] = 'Bream'
 
