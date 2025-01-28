@@ -49,6 +49,7 @@ y_target = data["Species"] # target value: Bream, Pike, Perch,
 # Preparing and training the 
 x_train, y_train, x_test, y_test = train_test_split(x_features,y_target, test_size=0.2, stratify=y_target)
 
+# END OF PART 1
 
 
 
@@ -57,6 +58,9 @@ x_train, y_train, x_test, y_test = train_test_split(x_features,y_target, test_si
 # For each species, calculate and print the mean, standard deviation, and interquartile range (IQR) for each numerical feature
 # (e.g., length1, length2, length3, height, width, and weight). Use Pandas and NumPy for your calculations. 
 # You can calculate the IQR using the difference between the 75th and 25th percentiles.
+
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # slice the data using groupby() from pandas 
 sliced_species = data.groupby('Species')
@@ -71,5 +75,23 @@ bream = sliced_species.get_group('Bream')
 # Pike = sliced_species.get_group("Pike")
 # smelt = sliced_species.get_group("Smelt")
 
-bream_mean = bream.mean()
-print(bream_mean)
+# Calculate mean & standard deviation for ALL species
+species_stats = data.groupby('Species').agg(['mean', 'std']).round(2)
+print(species_stats)  # Print overall stats
+
+# Calculate mean and standard deviation for Bream only
+bream_mean = bream.mean(numeric_only=True).round(2).to_frame().T  # Convert to DataFrame
+bream_standard_deviation = bream.std(numeric_only=True).round(2).to_frame().T  # Convert to DataFrame
+
+# Add a column for 'Species' (since we filtered only Bream before)
+bream_mean['Species'] = 'Bream'
+bream_standard_deviation['Species'] = 'Bream'
+
+# Plot the Mean and Standard Deviation for Bream
+plt.figure(figsize=(12,6))
+sns.barplot(x='Species', y='Weight', data=bream_mean, yerr=bream_standard_deviation['Weight'])
+plt.xticks(rotation=45)
+plt.ylabel("Mean Weight")
+plt.title("Mean and Standard Deviation of Bream Weight")
+plt.show()
+
