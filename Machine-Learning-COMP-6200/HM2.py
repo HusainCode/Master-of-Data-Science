@@ -6,6 +6,7 @@ DATA_FRAME = pandas.read_csv(file_path)
 
 
 # # This function to computer the  distance using the provided formula
+# d = 𝑎𝑐𝑜𝑠(sin(𝑙𝑎𝑡1) ∗ sin(𝑙𝑎𝑡2) + cos(𝑙𝑎𝑡1) ∗ cos(𝑙𝑎𝑡2) ∗ cos(𝑙𝑜𝑛2 − 𝑙𝑜𝑛1)) ∗ 6371
 def determine_distance(latitude1, longitude1, latitude2, longitude2):
     latitude1, longitude1, latitude2, longitude2 = map(numpy.radians, [latitude1, longitude1, latitude2, longitude2])
     return numpy.arccos(
