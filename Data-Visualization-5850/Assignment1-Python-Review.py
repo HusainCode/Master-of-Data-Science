@@ -10,10 +10,6 @@
 
 
 # Task:
-# Part 3: Regression
-# Using Scikit-learn, create a linear regression model to predict a fish’s weight based on the other numerical features (length1, length2, length3, height, and width). Ensure the model is trained only on the training split.
-# Print the coefficients and intercept of the trained regression model.
-# Calculate and print the model’s accuracy (e.g., R^2 score) on both the training and testing splits.
 
 # Part 4: Classification
 # Using Scikit-learn, create a fully-grown decision tree classifier to predict a fish’s species using its length, width, and height measurements. Ensure that the model does not use the fish’s weight in the calculations, and that it is trained only on the training split.
@@ -60,17 +56,28 @@ x_train, y_train, x_test, y_test = train_test_split(x_features,y_target, test_si
 import matplotlib.pyplot as plt
 import seaborn as sns
 from tabulate import tabulate
+import numpy as np
 
 # slice the data using groupby() from pandas 
 sliced_species = data.groupby('Species')
 
-# Calculate mean & standard deviation for ALL species
+print("mean for each numerical feature")
+# Calculate mean deviation
 mean_stats = data.groupby('Species').std().round(2) # .agg() function applies one or more aggregation functions, such as mean, std
 print(tabulate(mean_stats, headers='keys', tablefmt='fancy_grid')) # Print mean stats
 
+print("\nstandard deviation for each numerical feature")
+# Calculate standard deviation
 std_stats = data.groupby('Species').mean().round(2) # .agg() function applies one or more aggregation functions, such as mean, std
 print(tabulate(std_stats, headers='keys', tablefmt='fancy_grid')) # Print std stats
 
 print("\ninterquartile range (IQR) for each numerical feature")
 interquartile_stats = data.groupby('Species').agg(lambda x: np.percentile(x, 75) - np.percentile(x, 25))
 print(tabulate(interquartile_stats, headers='keys', tablefmt='fancy_grid')) # Print  interquartile stats
+
+# END OF PART 2
+
+# Part 3: Regression
+# Using Scikit-learn, create a linear regression model to predict a fish’s weight based on the other numerical features (length1, length2, length3, height, and width). Ensure the model is trained only on the training split.
+# Print the coefficients and intercept of the trained regression model.
+# Calculate and print the model’s accuracy (e.g., R^2 score) on both the training and testing splits.
