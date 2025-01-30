@@ -41,6 +41,14 @@ NATIONAL_NAMES_DATA = pd.read_csv(FILE_PATH_NATIONAL_NAMES)
 TOTAL_BIRTHS_DATA = pd.read_csv(FILE_PATH_TOTAL_BIRTHS)
 
 # Question: 1
-five_most_popular_male_names_2023 = NATIONAL_NAMES_DATA[NATIONAL_NAMES_DATA[NATIONAL_NAMES_DATA[(NATIONAL_NAMES_DATA[NATIONAL_NAMES_DATA['Sex'] == 'Male')]
-                                                                            & (NATIONAL_NAMES_DATA[NATIONAL_NAMES_DATA['Year'] == "2023" )]
+# Filter for male names in 2023
+top_5_male_names_2023 = NATIONAL_NAMES_DATA[
+    (NATIONAL_NAMES_DATA['Sex'] == 'Male') & (NATIONAL_NAMES_DATA['Year'] == 2023)
+]
+
+# Get the top 5 most popular names
+top_5_male_names_2023 = top_5_male_names_2023.nlargest(5, 'Count') # nlargest get the highest  value
+
+print(top_5_male_names_2023)
+
 # five_most_popular_female_names_2023 = NATIONAL_NAMES_DATA['Name']
